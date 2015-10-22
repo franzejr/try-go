@@ -161,9 +161,15 @@ a b c d e f g h i j k A B C D E F G H I J K L M N O P Q R S T U V l W X Y Z A B 
 Terminating Program
 ```
 
+## Atomic Functions
+
+## Mutexes
 
 
 ## Channels
 
-
 Channels are the pipes that connect concurrent goroutines. You can send values into channels from one goroutine and receive those values into another goroutine.
+
+Using atomic functions and mutexes work, but they don't make writing concurrent programs easier, less error prone or fun. In Go, we don't just have atomic functions and mutexes to keep shared resources safe and eliminate race conditions. We also have [channels](https://golang.org/ref/spec#Channel_types) which synchronize goroutines as they send and receive the resources they need to share between each other.
+
+
