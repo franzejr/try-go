@@ -21,6 +21,7 @@ Slices are built around the concept of dynamic arrays that can grow and shrink a
 A goroutine is a lightweight thread of execution.
 
 ´´´go
+
 package main
 
 import ( 
