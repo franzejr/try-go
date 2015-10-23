@@ -16,7 +16,7 @@ Slices are built around the concept of dynamic arrays that can grow and shrink a
 
 # 6 - Concurrency
 
-Go uses Communicating Sequential Processes(CSP). Based on message passing via channels.
+Go uses Communicating Sequential Processes([CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes)). Based on message passing via channels.
 
 ## Goroutine
 
