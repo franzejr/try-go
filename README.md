@@ -16,6 +16,8 @@ Slices are built around the concept of dynamic arrays that can grow and shrink a
 
 # 6 - Concurrency
 
+Go uses Communicating Sequential Processes(CSP). Based on message passing via channels.
+
 ## Goroutine
 
 A goroutine is a lightweight thread of execution.
