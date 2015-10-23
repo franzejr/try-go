@@ -172,4 +172,21 @@ Channels are the pipes that connect concurrent goroutines. You can send values i
 
 Using atomic functions and mutexes work, but they don't make writing concurrent programs easier, less error prone or fun. In Go, we don't just have atomic functions and mutexes to keep shared resources safe and eliminate race conditions. We also have [channels](https://golang.org/ref/spec#Channel_types) which synchronize goroutines as they send and receive the resources they need to share between each other.
 
+When a resources needs to be shared between goroutines, channels acts as a conduit between the goroutines and provide mechanism that guarantees a synchronous exchange. When we are gonna declare a channel, the type of data needs to be specified.
 
+```go
+// Unbuffered channel of integers. 
+unbuffered := make(chan int) 
+// Buffered channel of strings. 
+buffered := make(chan string, 10)
+```
+Here we can see two types of channel. If we are using a buffered channel, we need to specify the size of the channel's buffer as the second argument.
+
+Sending a value pointer into a channel, we can use the **<-** operator.
+
+```go
+// Buffered channel of strings. 
+buffered := make(chan string, 10) 
+// Send a string through
+buffered <- "Gopher"
+```
