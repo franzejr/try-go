@@ -1,6 +1,15 @@
 # try-go
 
+## What is this
 
+Annotations about my studies in GoLang.
+
+**References: **
+
+- [Go in Action](https://www.manning.com/books/go-in-action)
+- [A Tour of Go](https://tour.golang.org/)
+- [Go by Example](https://gobyexample.com/)
+ 
 # 3 - Packaging and tooling
 
 
