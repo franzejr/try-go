@@ -4,7 +4,7 @@
 
 Annotations about my studies in GoLang.
 
-**References: **
+**References:**
 
 - [Go in Action](https://www.manning.com/books/go-in-action)
 - [A Tour of Go](https://tour.golang.org/)
