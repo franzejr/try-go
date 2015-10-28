@@ -9,6 +9,39 @@ Annotations about my studies in GoLang.
 - [Go in Action](https://www.manning.com/books/go-in-action)
 - [A Tour of Go](https://tour.golang.org/)
 - [Go by Example](https://gobyexample.com/)
+
+# 1 - Fundamentals
+
+## If with a short statement
+
+Like for, the if statement can start with a short statement to execute before the condition.
+Variables declared by the statement are only in scope until the end of the if.
+
+```go
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func pow(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+	return lim
+}
+
+func main() {
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(2, 2, 10),
+		pow(3, 3, 20),
+	)
+}
+```
+
+
  
 # 3 - Packaging and tooling
 
