@@ -12,6 +12,13 @@ Annotations about my studies in GoLang.
 
 # 1 - Fundamentals
 
+## Overview
+- Strongly typed
+- Compiled
+- Stylitically nice
+- Opinionated
+
+
 ## If with a short statement
 
 Like for, the if statement can start with a short statement to execute before the condition.
@@ -38,6 +45,49 @@ func main() {
 		pow(2, 2, 10),
 		pow(3, 3, 20),
 	)
+}
+```
+
+## Switch with no condition
+
+Switch without a condition is the same as switch true.
+This construct can be a clean way to write long if-then-else chains.
+
+```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good morning!")
+	case t.Hour() < 17:
+		fmt.Println("Good afternoon.")
+	default:
+		fmt.Println("Good evening.")
+	}
+}
+```
+
+## Defer
+
+A defer statement defers the execution of a function until the surrounding function returns.
+The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	defer fmt.Println("world")
+
+	fmt.Println("hello")
 }
 ```
 
