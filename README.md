@@ -18,6 +18,7 @@ Annotations about my studies in GoLang.
 - Stylitically nice
 - Opinionated
 - easy learning curve
+- cross-compile
 
 Go is a programming language designed by Google to help solve Google's problems, and Google has big problems.
 
@@ -432,6 +433,12 @@ buffered := make(chan string, 10)
 // Send a string through
 buffered <- "Gopher"
 ```
+
+## Some bad aspects
+
+### Debugging
+
+### Lack of generics?
 
 ## Summary
 - Clear dependencies
