@@ -17,6 +17,7 @@ Annotations about my studies in GoLang.
 - Compiled
 - Stylitically nice
 - Opinionated
+- easy learning curve
 
 Go is a programming language designed by Google to help solve Google's problems, and Google has big problems.
 
@@ -42,6 +43,11 @@ The language is much easier to use because of garbage collection.
 Of course, garbage collection brings significant costs: general overhead, latency, and complexity of the implementation. Nonetheless, we believe that the benefits, which are mostly felt by the programmer, outweigh the costs, which are largely borne by the language implementer.
 
 Although Go is a garbage collected language, therefore, a knowledgeable programmer can limit the pressure placed on the collector and thereby improve performance. (Also, the Go installation comes with good tools for studying the dynamic memory performance of a running program.)
+
+- Super convenient
+- References
+- Completed goroutines
+
 
 ## If with a short statement
 
@@ -181,6 +187,11 @@ func main() {
 	}
 }
 ```
+
+## Marshalling
+
+Marshalling is the process of converting a data field, or an entire set of related structures, into a serialized string that can be sent in a message. 
+Go offers built-in support for JSON encoding and decoding, including to and from built-in and custom data types.
 
 ## Function values
 
@@ -421,3 +432,15 @@ buffered := make(chan string, 10)
 // Send a string through
 buffered <- "Gopher"
 ```
+
+## Summary
+- Clear dependencies
+- Clear syntax
+- Clear semantics
+- Composition over inheritance
+- Simplicity provided by the programming model (garbage collection, concurrency)
+- Easy tooling (the go tool, gofmt, godoc, gofix)
+
+If you haven't tried Go already, we suggest you do.
+
+http://golang.org
