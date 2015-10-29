@@ -25,7 +25,15 @@ The goals of the Go project were to eliminate the slowness and clumsiness of sof
 Go's purpose is therefore not to do research into programming language design; it is to improve the working environment for its designers and their coworkers. Go is more about software engineering than programming language research. Or to rephrase, it is about language design in the service of software engineering.
 
 
+## Naming
 
+**There is no public and private keywords**
+
+Go takes an unusual approach to defining the visibility of an identifier, the ability for a client of a package to use the item named by the identifier. Unlike, for instance, private and public keywords, in Go the name itself carries the information: the case of the initial letter of the identifier determines the visibility. If the initial character is an upper case letter, the identifier is exported (public); otherwise it is not:
+
+upper case initial letter: Name is visible to clients of package
+otherwise: name (or _Name) is not visible to clients of package
+This rule applies to variables, types, functions, methods, constants, fields... everything. That's all there is to it.
 
 ## If with a short statement
 
