@@ -207,6 +207,10 @@ func main() {
 An interface type is defined by a set of methods.
 A value of interface type can hold any value that implements those methods.
 
+Interfaces in Go provide a way to specify the behavior of an object: if something can do this, then it can be used here. We've seen a couple of simple examples already; custom printers can be implemented by a String method while Fprintf can generate output to anything with a Write method. Interfaces with only one or two methods are common in Go code, and are usually given a name derived from the method, such as io.Writer for something that implements Write.
+
+A type can implement multiple interfaces. For instance, a collection can be sorted by the routines in package sort if it implements sort.Interface, which contains Len(), Less(i, j int) bool, and Swap(i, j int), and it could also have a custom formatter. In this contrived example Sequence satisfies both.
+
  
 # 3 - Packaging and tooling
 
@@ -219,6 +223,14 @@ $ go get github.com/4ad/doozer // Shell command to fetch package
 ```
 
 It's worth noting that the go get command downloads dependencies recursively, a property made possible only because the dependencies are explicit. Also, the allocation of the space of import paths is delegated to URLs, which makes the naming of packages decentralized and therefore scalable, in contrast to centralized registries used by other languages.
+
+## Garbage collector
+
+The language is much easier to use because of garbage collection.
+
+Of course, garbage collection brings significant costs: general overhead, latency, and complexity of the implementation. Nonetheless, we believe that the benefits, which are mostly felt by the programmer, outweigh the costs, which are largely borne by the language implementer.
+
+Although Go is a garbage collected language, therefore, a knowledgeable programmer can limit the pressure placed on the collector and thereby improve performance. (Also, the Go installation comes with good tools for studying the dynamic memory performance of a running program.)
 
 
 # 4 - Arrays, Slices and Maps
@@ -234,6 +246,8 @@ Slices are built around the concept of dynamic arrays that can grow and shrink a
 # 6 - Concurrency
 
 Go uses Communicating Sequential Processes([CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes)). Based on message passing via channels.
+
+In summary, CSP is practical for Go and for Google. When writing a web server, the canonical Go program, the model is a great fit.
 
 ## Goroutine
 
