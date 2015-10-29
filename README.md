@@ -18,6 +18,14 @@ Annotations about my studies in GoLang.
 - Stylitically nice
 - Opinionated
 
+Go is a programming language designed by Google to help solve Google's problems, and Google has big problems.
+
+The goals of the Go project were to eliminate the slowness and clumsiness of software development at Google, and thereby to make the process more productive and scalable. The language was designed by and for people who write—and read and debug and maintain—large software systems.
+
+Go's purpose is therefore not to do research into programming language design; it is to improve the working environment for its designers and their coworkers. Go is more about software engineering than programming language research. Or to rephrase, it is about language design in the service of software engineering.
+
+
+
 
 ## If with a short statement
 
@@ -185,9 +193,23 @@ func main() {
 }
 ```
 
+## Interfaces
+
+An interface type is defined by a set of methods.
+A value of interface type can hold any value that implements those methods.
 
  
 # 3 - Packaging and tooling
+
+An important property of Go's package system is that the package path, being in general an arbitrary string, can be co-opted to refer to remote repositories by having it identify the URL of the site serving the repository.
+
+Here is how to use the doozer package from github. The go get command uses the go build tool to fetch the repository from the site and install it. Once installed, it can be imported and used like any regular package.
+
+```
+$ go get github.com/4ad/doozer // Shell command to fetch package
+```
+
+It's worth noting that the go get command downloads dependencies recursively, a property made possible only because the dependencies are explicit. Also, the allocation of the space of import paths is delegated to URLs, which makes the naming of packages decentralized and therefore scalable, in contrast to centralized registries used by other languages.
 
 
 # 4 - Arrays, Slices and Maps
