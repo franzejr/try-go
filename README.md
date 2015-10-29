@@ -91,6 +91,12 @@ func main() {
 }
 ```
 
+**Output**
+
+```
+hello world
+```
+
 
  
 # 3 - Packaging and tooling
