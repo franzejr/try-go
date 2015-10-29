@@ -24,7 +24,6 @@ The goals of the Go project were to eliminate the slowness and clumsiness of sof
 
 Go's purpose is therefore not to do research into programming language design; it is to improve the working environment for its designers and their coworkers. Go is more about software engineering than programming language research. Or to rephrase, it is about language design in the service of software engineering.
 
-
 ## Naming
 
 **There is no public and private keywords**
@@ -35,6 +34,14 @@ Go takes an unusual approach to defining the visibility of an identifier, the ab
 - otherwise: name (or _Name) is not visible to clients of package
 
 This rule applies to **variables**, **types**, **functions**, **methods**, **constants**, **fields**... everything. That's all there is to it.
+
+## Garbage collector
+
+The language is much easier to use because of garbage collection.
+
+Of course, garbage collection brings significant costs: general overhead, latency, and complexity of the implementation. Nonetheless, we believe that the benefits, which are mostly felt by the programmer, outweigh the costs, which are largely borne by the language implementer.
+
+Although Go is a garbage collected language, therefore, a knowledgeable programmer can limit the pressure placed on the collector and thereby improve performance. (Also, the Go installation comes with good tools for studying the dynamic memory performance of a running program.)
 
 ## If with a short statement
 
@@ -223,15 +230,6 @@ $ go get github.com/4ad/doozer // Shell command to fetch package
 ```
 
 It's worth noting that the go get command downloads dependencies recursively, a property made possible only because the dependencies are explicit. Also, the allocation of the space of import paths is delegated to URLs, which makes the naming of packages decentralized and therefore scalable, in contrast to centralized registries used by other languages.
-
-## Garbage collector
-
-The language is much easier to use because of garbage collection.
-
-Of course, garbage collection brings significant costs: general overhead, latency, and complexity of the implementation. Nonetheless, we believe that the benefits, which are mostly felt by the programmer, outweigh the costs, which are largely borne by the language implementer.
-
-Although Go is a garbage collected language, therefore, a knowledgeable programmer can limit the pressure placed on the collector and thereby improve performance. (Also, the Go installation comes with good tools for studying the dynamic memory performance of a running program.)
-
 
 # 4 - Arrays, Slices and Maps
 An array in Go is a fixed length data type that contains a contiguous block of elements of the same type. 
