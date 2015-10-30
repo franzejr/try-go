@@ -194,6 +194,9 @@ func main() {
 Marshalling is the process of converting a data field, or an entire set of related structures, into a serialized string that can be sent in a message. 
 Go offers built-in support for JSON encoding and decoding, including to and from built-in and custom data types.
 
+Working with and using JSON (Javascript Object Notation) is more common nowadays than working with XML (Extensible Markup Language). This is primarily because using JSON requires less markup than working with XML. This means less data per message needs to be sent over the network which helps with the overall performance of the system. Also, JSON can be transformed into BSON (Binary Javascript Object Notation) which reduces the size of each message even further. Because of this, we will explore how to consume and publish JSON in our Go applications. However, working with XML is very similar.
+
+
 ## Function values
 
 Go supports anonymous functions, which can form closures. Anonymous functions are useful when you want to define a function inline without having to name it.
