@@ -440,7 +440,27 @@ buffered <- "Gopher"
 
 ### Lack of generics?
 
+### Error handling
+
+Go does not have an exception facility in the conventional sense, that is, there is no control structure associated with error handling. (Go does provide mechanisms for handling exceptional situations such as division by zero. A pair of built-in functions called panic and recover allow the programmer to protect against such things. However, these functions are intentionally clumsy, rarely used, and not integrated into the library the way, say, Java libraries use exceptions.)
+
+
+
 ## Summary
+
+Several big user-facing services use it, including youtube.com and dl.google.com (the download server that delivers Chrome, Android and other downloads), as well as our own golang.org. And of course many small ones do, mostly built using Google App Engine's native support for Go.
+
+Many other companies use Go as well; the list is very long, but a few of the better known are:
+
+- BBC Worldwide
+- Canonical
+- Heroku
+- Nokia
+- SoundCloud
+
+
+Futher, some interesting aspects:
+
 - Clear dependencies
 - Clear syntax
 - Clear semantics
