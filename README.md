@@ -233,6 +233,18 @@ A type can implement multiple interfaces. For instance, a collection can be sort
  
 # 3 - Packaging and tooling
 
+The design of Go's package system combines some of the properties of libraries, name spaces, and modules into a single construct.
+
+Every Go source file, for instance "encoding/json/json.go", starts with a package clause, like this:
+
+```go
+package json
+```
+
+### Remote packages
+
+It's worth noting that the go get command downloads dependencies recursively, a property made possible only because the dependencies are explicit. Also, the allocation of the space of import paths is delegated to URLs, which makes the naming of packages decentralized and therefore scalable, in contrast to centralized registries used by other languages.
+
 An important property of Go's package system is that the package path, being in general an arbitrary string, can be co-opted to refer to remote repositories by having it identify the URL of the site serving the repository.
 
 Here is how to use the doozer package from github. The go get command uses the go build tool to fetch the repository from the site and install it. Once installed, it can be imported and used like any regular package.
@@ -241,7 +253,6 @@ Here is how to use the doozer package from github. The go get command uses the g
 $ go get github.com/4ad/doozer // Shell command to fetch package
 ```
 
-It's worth noting that the go get command downloads dependencies recursively, a property made possible only because the dependencies are explicit. Also, the allocation of the space of import paths is delegated to URLs, which makes the naming of packages decentralized and therefore scalable, in contrast to centralized registries used by other languages.
 
 # 4 - Arrays, Slices and Maps
 An array in Go is a fixed length data type that contains a contiguous block of elements of the same type. 
